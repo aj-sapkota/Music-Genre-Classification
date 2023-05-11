@@ -4,4 +4,5 @@ This repository contains the implementation of a music genre classification mode
 
 # Webapp
 using django web app can be run in local server 
+![UI](/img/music_genre_1.png)
 
