@@ -1,0 +1,52 @@
+{% extends 'musicgenre/base.html' %} 
+{% load static %}
+{% block content %}
+
+<div class="bg">
+  <img src= {% static 'images/music.jpg' %} class="bg" ></img>
+    </div>
+        {% include 'musicgenre/navbar.html' %}
+        <p>
+          <div class = "container">
+            <form class = "form-group" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+                <label for = "form"><h2>Discover, What's your music taste!</h2></label>                    
+                    <div class="row">
+                        <div class="column">
+                            <input type="file" class="form-control-file" placeholder="Enter your music" name="upload_music">  
+                            <p></p>
+                        </div>
+                        <div >
+                            <input type="submit" class="btn btn-primary" value="Upload">
+                            <p></p>  
+                        </div>
+                    </div>                  
+                    <div class = "for_output_msg">
+                        {% include 'musicgenre/uploaded.html' %} 
+
+                        <p></p>
+
+                        {% include 'musicgenre/messages.html' %} 
+                         
+                        
+                        <p></p>
+
+                        {% if filename %}
+                          <p>
+                            Your Filename:
+                            <h>{{filename}} </h>
+                          </p>
+                        {% endif %}
+                    </div>
+
+            </form>
+                        
+          </div>
+                
+     </div>
+</div>
+
+ 
+<p></p>
+                        
+{% endblock %}
